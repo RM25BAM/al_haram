@@ -1,0 +1,35 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - waste-dashboard
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - HOST=0.0.0.0
+      - JWT_SECRET=production-secret-key-change-this
+      - CORS_ORIGIN=http://frontend:3000
+    networks:
+      - waste-dashboard
+
+networks:
+  waste-dashboard:
+    driver: bridge
+
+volumes:
+  backend_node_modules:

@@ -1,0 +1,26 @@
+# Development Dockerfile for Waste Dashboard Backend
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install pnpm globally
+RUN npm install -g pnpm
+
+# Copy package files
+COPY package.json pnpm-lock.yaml ./
+
+# Install all dependencies (including dev dependencies)
+RUN pnpm install
+
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 8000
+
+# Set environment to development
+ENV NODE_ENV=development
+
+# Start the development server with hot reloading
+CMD ["pnpm", "dev"]

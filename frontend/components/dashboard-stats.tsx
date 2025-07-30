@@ -1,0 +1,182 @@
+"use client";
+
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Trash2,
+  AlertTriangle,
+  Truck,
+  CheckCircle,
+  Filter,
+} from "lucide-react";
+import { useDashboardTranslations } from "@/hooks/use-translations";
+import { useDashboardStats } from "@/lib/store/socketStore";
+import { useCarbonFilterCountdown } from "@/hooks/use-carbon-filter-countdown";
+import type { TCarbonFilterStatus } from "@/types";
+import {
+  TotalBinsDialog,
+  CriticalBinsDialog,
+  NeedsCollectionDialog,
+  ActiveTrucksDialog,
+  CarbonFilterDialog,
+} from "@/components/dashboard/dialogs";
+
+type DialogType =
+  | "total"
+  | "critical"
+  | "needsCollection"
+  | "activeTrucks"
+  | "carbonFilter"
+  | null;
+
+// Helper functions for carbon filter display logic
+function getCarbonFilterDisplayValue(
+  carbonFilter: TCarbonFilterStatus
+): string {
+  if (carbonFilter.isLoading) return "Loading...";
+  if (carbonFilter.error) return "Error";
+  return carbonFilter.formattedTimeRemaining;
+}
+
+function getCarbonFilterColors(carbonFilter: TCarbonFilterStatus): {
+  color: string;
+  bgColor: string;
+} {
+  if (carbonFilter.isLoading) {
+    return {
+      color: "text-primary/70",
+      bgColor: "bg-surface-200",
+    };
+  }
+
+  if (carbonFilter.isExpired) {
+    return {
+      color: "text-red-600",
+      bgColor: "bg-red-100",
+    };
+  }
+
+  if (carbonFilter.isCritical) {
+    return {
+      color: "text-orange-600",
+      bgColor: "bg-orange-100",
+    };
+  }
+
+  if (carbonFilter.isNearExpiry) {
+    return {
+      color: "text-yellow-600",
+      bgColor: "bg-yellow-100",
+    };
+  }
+
+  return {
+    color: "text-green-600",
+    bgColor: "bg-green-100",
+  };
+}
+
+export function DashboardStats() {
+  const tDashboard = useDashboardTranslations();
+  const { totalBins, criticalBins, needsCollectionBins, activeTrucks } =
+    useDashboardStats();
+  const carbonFilter = useCarbonFilterCountdown();
+
+  // Single state for dialog management
+  const [activeDialog, setActiveDialog] = useState<DialogType>(null);
+
+  const stats = [
+    {
+      title: tDashboard("totalBins"),
+      value: totalBins,
+      icon: Trash2,
+      color: "text-gray-600",
+      bgColor: "bg-gray-100",
+      onClick: () => setActiveDialog("total"),
+    },
+    {
+      title: tDashboard("criticalBins"),
+      value: `${criticalBins.length}/${totalBins}`,
+      icon: AlertTriangle,
+      color: "text-red-600",
+      bgColor: "bg-red-50",
+      onClick: () => setActiveDialog("critical"),
+    },
+    {
+      title: tDashboard("needsCollection"),
+      value: `${needsCollectionBins.length}/${totalBins}`,
+      icon: CheckCircle,
+      color: "text-amber-600",
+      bgColor: "bg-amber-50",
+      onClick: () => setActiveDialog("needsCollection"),
+    },
+    {
+      title: tDashboard("activeTrucks"),
+      value: activeTrucks.length,
+      icon: Truck,
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      onClick: () => setActiveDialog("activeTrucks"),
+    },
+    {
+      title: tDashboard("carbonFilterCountdown"),
+      value: getCarbonFilterDisplayValue(carbonFilter),
+      icon: Filter,
+      ...getCarbonFilterColors(carbonFilter),
+      onClick: () => setActiveDialog("carbonFilter"),
+    },
+  ];
+
+  const closeDialog = () => setActiveDialog(null);
+
+  return (
+    <>
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
+        {stats.map((stat, index) => (
+          <Card
+            key={index}
+            className="hover:shadow-lg transition-all duration-200 cursor-pointer bg-surface-200 border border-outline hover:scale-[1.02]"
+            onClick={stat.onClick}
+          >
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-3 sm:px-4 lg:px-6 pt-3 sm:pt-4 lg:pt-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-primary leading-tight">
+                {stat.title}
+              </CardTitle>
+              <div
+                className={`p-1.5 sm:p-2 rounded-lg ${stat.bgColor} shadow-sm`}
+              >
+                <stat.icon className={`h-3 w-3 sm:h-4 sm:w-4 ${stat.color}`} />
+              </div>
+            </CardHeader>
+            <CardContent className="px-3 sm:px-4 lg:px-6 pb-3 sm:pb-4 lg:pb-6">
+              <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">
+                {stat.value}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      {/* Conditionally render dialogs */}
+      {activeDialog === "total" && (
+        <TotalBinsDialog open={true} onClose={closeDialog} />
+      )}
+
+      {activeDialog === "critical" && (
+        <CriticalBinsDialog open={true} onClose={closeDialog} />
+      )}
+
+      {activeDialog === "needsCollection" && (
+        <NeedsCollectionDialog open={true} onClose={closeDialog} />
+      )}
+
+      {activeDialog === "activeTrucks" && (
+        <ActiveTrucksDialog open={true} onClose={closeDialog} />
+      )}
+
+      {activeDialog === "carbonFilter" && (
+        <CarbonFilterDialog open={true} onClose={closeDialog} />
+      )}
+    </>
+  );
+}
