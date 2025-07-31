@@ -94,6 +94,7 @@ body {
     --primary-foreground: 41 21% 84%;
     /* Surface color for contrast */
     --secondary: 40 45% 52%;
+    --bar: 198 50% 14%;
     /* #244E47 - Your secondary color */
     --secondary-foreground: 41 21% 84%;
     /* Surface color for contrast */
@@ -101,9 +102,9 @@ body {
     /* Using secondary color for muted */
     --muted-foreground: 43 32% 90%;
     /* Light cream for muted text */
-    --accent: 165 35% 28%;
-    /* #244E47 - Secondary green for accents */
-    --accent-foreground: 43 32% 90%;
+    --accent: 197 35% 45%;
+    /* A vibrant cyan for accents */
+    --accent-foreground: 197 50% 10%;
     /* Light cream for accent text */
     --destructive: 0 65% 55%;
     /* Keep existing destructive color */
@@ -162,29 +163,40 @@ body {
     --info-foreground: 165 40% 24%;
     /* Dark green text */
 
-    /* Professional Color Palette - Your 4 main colors with full scales */
-    --surface: 41 21% 88%;
-    /* #DDD7CB - Your primary surface (dark cream) */
-    --surface-50: 43 32% 90%;
-    /* #EBEBDF - Your light cream */
-    --surface-100: 42 28% 88%;
-    /* Lighter variant */
-    --surface-200: 43 32% 90%;
-    /* #EBEBDF - Your exact light cream color */
-    --surface-300: 42 25% 85%;
-    /* Medium variant */
-    --surface-400: 41 23% 83%;
-    /* Medium-dark variant */
-    --surface-500: 41 21% 84%;
-    /* #DDD7CB - Your exact primary surface */
-    --surface-600: 41 19% 79%;
-    /* Darker variant */
-    --surface-700: 41 17% 74%;
-    /* Much darker */
-    --surface-800: 41 15% 69%;
-    /* Very dark */
-    --surface-900: 41 13% 64%;
-    /* Darkest */
+    --surface: 210 15% 92%;
+    /* #E7EAEC – New primary surface (cool, soft, modern) */
+
+    --surface-50: 210 15% 96%;
+    /* #F4F6F7 – Almost white */
+
+    --surface-100: 210 14% 94%;
+    /* #EEF1F3 – Extra light */
+
+    --surface-200: 210 14% 92%;
+    /* #E7EAEC – Same as primary surface */
+
+    --surface-300: 210 13% 89%;
+    /* #DEE1E3 – Medium light */
+
+    --surface-400: 210 12% 85%;
+    /* #D3D7DA – Soft gray tone */
+
+    --surface-500: 210 12% 80%;
+    /* #C7CCD0 – Card edges or inactive sections */
+
+    --surface-600: 210 11% 72%;
+    /* #B2B7BB – For borders or depth */
+
+    --surface-700: 210 10% 65%;
+    /* #9EA2A6 – Muted, good for headers or shadows */
+
+    --surface-800: 210 9% 55%;
+    /* #83878B – Darker panels */
+
+    --surface-900: 210 10% 45%;
+    /* #6A6E72 – Deep surface shade, still soft */
+
+
 
     /* Professional Color Palette - Outline/Border Colors */
     --outline: 40 15% 77%;
@@ -293,7 +305,7 @@ body {
     /* Light cream text */
 
     /* Professional Color Palette - Surface Colors (Dark Mode) */
-    --surface: 165 35% 18%;
+    --surface: 41 8% 97%;
     /* Dark surface using your color palette */
     --surface-50: 165 35% 25%;
     /* Lighter surface variant */
@@ -372,20 +384,23 @@ body {
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
+    /* A slightly darker version of your background for the track */
+    background: hsl(197, 50%, 18%);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--accent));
+    /* A lighter, visible handle that contrasts with the track */
+    background: #29637A;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary));
+    /* A brighter handle for clear hover feedback */
+    background: #29637A;
   }
 }
 

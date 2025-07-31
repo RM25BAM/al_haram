@@ -44,29 +44,29 @@ function getCarbonFilterColors(carbonFilter: TCarbonFilterStatus): {
 } {
   if (carbonFilter.isLoading) {
     return {
-      color: "text-primary/70",
-      bgColor: "bg-surface-200",
+      bgColor: "text-primary/70",
+      color: "bg-surface-200",
     };
   }
 
   if (carbonFilter.isExpired) {
     return {
-      color: "text-red-600",
-      bgColor: "bg-red-100",
+      bgColor: "text-red-600",
+      color: "bg-red-100",
     };
   }
 
   if (carbonFilter.isCritical) {
     return {
-      color: "text-orange-600",
-      bgColor: "bg-orange-100",
+      bgColor: "bg-orange-600",
+      color: "text-orange-100",
     };
   }
 
   if (carbonFilter.isNearExpiry) {
     return {
-      color: "text-yellow-600",
-      bgColor: "bg-yellow-100",
+      bgColor: "bg-yellow-600",
+      color: "text-yellow-100",
     };
   }
 
@@ -88,18 +88,18 @@ export function DashboardStats() {
   const stats = [
     {
       title: tDashboard("totalBins"),
-      borderColor: "border-gray-300",
-      backGround: "bg-gray-100",
+      borderColor: "border-gray-500",
+      backGround: "bg-gray-400",
       value: totalBins,
       icon: Trash2,
       color: "text-white",
-      bgColor: "bg-gray-500",
+      bgColor: "bg-gray-400",
       onClick: () => setActiveDialog("total"),
     },
     {
       title: tDashboard("criticalBins"),
-      borderColor: "border-red-300",
-      backGround: "bg-red-300",
+      borderColor: "border-red-600",
+      backGround: "bg-red-500",
       value: `${criticalBins.length}/${totalBins}`,
       icon: AlertTriangle,
       color: "text-white",
@@ -108,8 +108,8 @@ export function DashboardStats() {
     },
     {
       title: tDashboard("needsCollection"),
-      borderColor: "border-amber-500",
-      backGround: "bg-amber-300",
+      borderColor: "border-amber-600",
+      backGround: "bg-amber-500",
       value: `${needsCollectionBins.length}/${totalBins}`,
       icon: CheckCircle,
       color: "text-white",
@@ -118,18 +118,18 @@ export function DashboardStats() {
     },
     {
       title: tDashboard("activeTrucks"),
-      borderColor: "border-blue-500",
-      backGround: "bg-blue-300",
+      borderColor: "border-blue-900",
+      backGround: "bg-blue-800",
       value: activeTrucks.length,
       icon: Truck,
       color: "text-white",
-      bgColor: "bg-blue-800",
+      bgColor: "border-0 shaodw-0",
       onClick: () => setActiveDialog("activeTrucks"),
     },
     {
-      backGround: getCarbonFilterColors(carbonFilter),
       title: tDashboard("carbonFilterCountdown"),
       value: getCarbonFilterDisplayValue(carbonFilter),
+      borderColor: "border-0",
       icon: Filter,
       ...getCarbonFilterColors(carbonFilter),
       onClick: () => setActiveDialog("carbonFilter"),
@@ -144,11 +144,11 @@ export function DashboardStats() {
         {stats.map((stat, index) => (
           <Card
             key={index}
-            className={`hover:shadow-lg transition-all duration-200 ${stat.backGround} ${stat.borderColor} cursor-pointer border hover:scale-[1.02]`}
+            className={`hover:shadow-lg transition-all duration-200 ${stat.backGround || stat.bgColor} ${stat.borderColor} cursor-pointer hover:scale-[1.02]`}
             onClick={stat.onClick}
           >
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-3 sm:px-4 lg:px-6 pt-3 sm:pt-4 lg:pt-6">
-              <CardTitle className="text-xs sm:text-sm font-medium text-primary leading-tight">
+              <CardTitle className="text-md sm:text-lg font-mono font-semibold text-white leading-tight">
                 {stat.title}
               </CardTitle>
               <div
@@ -158,7 +158,7 @@ export function DashboardStats() {
               </div>
             </CardHeader>
             <CardContent className="px-3 sm:px-4 lg:px-6 pb-3 sm:pb-4 lg:pb-6">
-              <div className="text-lg sm:text-xl lg:text-2xl font-bold text-[#122B36]">
+              <div className="text-lg sm:text-xl lg:text-2xl font-bold font-mono text-white">
                 {stat.value}
               </div>
             </CardContent>

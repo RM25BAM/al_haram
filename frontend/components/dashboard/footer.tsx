@@ -10,6 +10,11 @@ export function DashboardFooter() {
 
   return (
     <footer className="border-t border-[#b99751]">
+      <img
+        src="/1.svg"
+        alt="Pattern"
+        className="fixed w-[400svh] bottom-0 left-0 -z-20 opacity-5"
+      />
       <div className="mx-auto p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Resources & Guidance */}

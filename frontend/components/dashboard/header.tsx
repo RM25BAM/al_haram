@@ -1,10 +1,9 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { useConnectionState } from "@/lib/store/socketStore";
-import { useSocketData } from "@/lib/store/socketStore";
-import { Recycle } from "lucide-react";
+import { useConnectionState, useSocketData } from "@/lib/store/socketStore";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { Recycle } from "lucide-react";
 import {
   useDashboardTranslations,
   useCommonTranslations,
@@ -19,24 +18,22 @@ export function DashboardHeader() {
   const formattedLastUpdated = useFormattedTime(lastUpdated);
 
   return (
-    /* mt-4 mx-3 sm:mx-4 lg:mx-6 */
-    <header className="shadow-sm top-0 ">
+    <header className="sticky top-0 z-50 bg-background w-full border-b border-primary shadow-md">
       <div className="w-full px-3 sm:px-4 lg:px-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-3 sm:py-4 gap-3 sm:gap-0">
+          {/* Logo and Title */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <div className="bg-gradient-to-br from-makkah-olive-500 to-makkah-olive-600 p-1.5 sm:p-2 rounded-lg shadow-sm">
-              {/* Dont like the navbar icon -> better to make own logo */}
-              <Recycle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+            <div className="rounded-lg shadow-sm">
+              <img src="/logo.svg" className="h-10 w-10 sm:h-12 sm:w-12" />
             </div>
             <div>
-              <h1 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white font-arabic">
+              <h1 className="text-mg sm:text-lg lg:text-xl font-semibold text-white font-arabic">
                 {tDashboard("title")}
               </h1>
-              {/* <p className="text-xs sm:text-sm text-gray-200">
-                {tDashboard("subtitle")}
-              </p> */}
             </div>
           </div>
+
+          {/* Controls */}
           <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
             <LanguageSwitcher />
             <Badge

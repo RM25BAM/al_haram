@@ -42,37 +42,40 @@ export function WasteCard({
     switch (variant) {
       case "total":
         return {
-          border: "border",
-          borderColor: "border-outline",
+          border: "",
+          borderColor: "",
           title: "text-primary",
-          badge: "bg-surface-200/60 text-primary border border-outline",
+          body: "text-primary",
+          badge: "bg-orange-200/90 text-primary",
           treatment: "bg-surface-200/50 text-primary",
-          card: "bg-surface-200/80", // Lightest beige
+          card: "bg-surface-50/90", // Lightest beige
         };
       case "plastic":
         return {
-          border: "border",
-          borderColor: "border-outline",
-          title: "text-primary",
-          badge: "bg-surface-300/70 text-primary border border-outline",
+          border: "",
+          borderColor: "",
+          title: "text-amber-900",
+          body: "text-amber-800",
+          badge: "bg-orange-200/90 text-primary",
           treatment: "bg-surface-300/60 text-primary",
-          card: "bg-surface-300/80", // Medium beige
+          card: "bg-amber-50/90", // Medium beige
         };
       case "organic":
         return {
-          border: "border",
-          borderColor: "border-outline",
-          title: "text-primary",
-          badge: "bg-surface-400/80 text-primary border border-outline",
+          border: "",
+          borderColor: "",
+          title: "text-green-900",
+          body: "text-green-800",
+          badge: "bg-orange-200/90 text-primary ",
           treatment: "bg-surface-400/70 text-primary",
-          card: "bg-surface-400/80", // Deepest beige
+          card: "bg-green-50/80", // Deepest beige
         };
       default:
         return {
-          border: "border",
+          border: "",
           borderColor: "border-outline",
           title: "text-primary",
-          badge: "bg-surface text-primary border border-outline",
+          badge: "bg-orange-200/90 text-primary",
           treatment: "bg-surface text-primary",
           card: "bg-surface",
         };
@@ -83,7 +86,7 @@ export function WasteCard({
   const descriptionText = description;
 
   return (
-    <Card
+    <Card 
       className={`
         flex-1 flex flex-col transition-all duration-200 shadow-sm ${variantClasses.border} ${variantClasses.borderColor} ${variantClasses.card}
         ${
@@ -96,16 +99,16 @@ export function WasteCard({
         <CardTitle
           className={`flex items-center gap-2 ${variantClasses.title}`}
         >
-          <Icon className="h-5 w-5" />
+          <Icon className={`h-5 w-5 ${variantClasses.title}`} />
           {title}
         </CardTitle>
         {descriptionText && (
-          <p className="text-sm text-secondary leading-relaxed">
+          <p className={`text-sm ${variantClasses.body} leading-relaxed`}>
             {descriptionText}
           </p>
         )}
         {isClickable && (
-          <p className="text-sm font-bold text-makkah-olive-600 leading-relaxed">
+          <p className={`text-sm font-bold ${variantClasses.title} leading-relaxed`}>
             {t("wasteDashboard.tapToExploreTreatmentStrategy")}
           </p>
         )}
@@ -123,7 +126,7 @@ export function WasteCard({
         </div>
 
         <div className="grid grid-cols-3 gap-0 text-sm">
-          <div className="text-center p-2 bg-surface border border-outline rounded-l-lg border-r-0">
+          <div className="text-center p-2 bg-amber-100 border border-outline rounded-l-lg border-r-0">
             <div className="flex items-center justify-center gap-1 text-yellow-600 mb-1">
               <Zap className="h-3 w-3" />
             </div>
@@ -132,7 +135,7 @@ export function WasteCard({
             </div>
             <div className="text-xs text-secondary">kWh</div>
           </div>
-          <div className="text-center p-2 bg-surface border border-outline border-r-0">
+          <div className="text-center p-2 bg-lime-200/80 border border-outline border-r-0">
             <div className="flex items-center justify-center gap-1 text-green-600 mb-1">
               <DollarSign className="h-3 w-3" />
             </div>
@@ -141,7 +144,7 @@ export function WasteCard({
             </div>
             <div className="text-xs text-secondary">SAR</div>
           </div>
-          <div className="text-center p-2 bg-surface border border-outline rounded-r-lg">
+          <div className="text-center p-2 bg-green-200/80 border border-outline rounded-r-lg">
             <div className="flex items-center justify-center gap-1 text-green-600 mb-1">
               <Leaf className="h-3 w-3" />
             </div>

@@ -68,9 +68,9 @@ const getMessageTypeIcon = (type: string) =>
 const getStatusColor = (status: string) => {
   switch (status) {
     case "active":
-      return "bg-secondary text-surface";
+      return "bg-orange-600 text-surface";
     case "completed":
-      return "bg-green-500 text-primary border-outline";
+      return "bg-green-600 text-surface border-outline";
     case "draft":
       return "bg-surface border-outline text-primary";
     default:
@@ -188,7 +188,7 @@ export function AwarenessFeature() {
                   className="h-2"
                 />
               </div>
-              <div className="p-3 bg-blue-100 text-blue-800 rounded-full">
+              <div className="p-3 bg-blue-800 text-blue-100 rounded-full">
                 <TrendingUp className="h-5 w-5" />
               </div>
             </div>
@@ -219,7 +219,7 @@ export function AwarenessFeature() {
                   </div>
                 </div>
               </div>
-              <div className="p-3 bg-gray-100 text-gray-800 rounded-full">
+              <div className="p-3 bg-gray-600 text-gray-100 rounded-full">
                 <Clock className="h-5 w-5" />
               </div>
             </div>
@@ -255,7 +255,7 @@ export function AwarenessFeature() {
                   {analytics.bestPerformingCampaign.engagementRate}% {t("engagement")}
                 </Badge>
               </div>
-              <div className="p-3 bg-yellow-100 text-yellow-700 rounded-full">
+              <div className="p-3 bg-yellow-600 text-yellow-100 rounded-full">
                 <Trophy className="h-5 w-5" />
               </div>
             </div>
@@ -375,7 +375,7 @@ export function AwarenessFeature() {
                         +{campaign.awarenessIncrease}%
                       </div>
                     </TableCell>
-                    <TableCell className="p-4">
+                    <TableCell className="p-4 hover:text-">
                       <Badge className={`${getStatusColor(campaign.status)} capitalize text-xs`}>
                         {getTranslatedStatus(campaign.status, t)}
                       </Badge>
