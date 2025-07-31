@@ -105,7 +105,7 @@ export function ReportsFeature({ onTypeClick }: ReportsFeatureProps) {
       </div>
 
       {/* Report Type Selection */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <FileText className="h-5 w-5" />
@@ -122,7 +122,7 @@ export function ReportsFeature({ onTypeClick }: ReportsFeatureProps) {
               return (
                 <Card
                   key={report.value}
-                  className={`cursor-pointer transition-all duration-200 hover:shadow-md border-outline ${
+                  className={`cursor-pointer transition-all duration-200 hover:shadow-md border-surface-400 ${
                     selectedReportType === report.value
                       ? "border-primary bg-primary/5"
                       : "bg-surface-200 hover:bg-surface"
@@ -137,7 +137,7 @@ export function ReportsFeature({ onTypeClick }: ReportsFeatureProps) {
                         className={`p-2 rounded-lg ${
                           selectedReportType === report.value
                             ? "bg-primary text-white"
-                            : "bg-surface border border-outline"
+                            : "bg-surface border border-surface-400"
                         }`}
                       >
                         <Icon className="h-5 w-5" />
@@ -165,7 +165,7 @@ export function ReportsFeature({ onTypeClick }: ReportsFeatureProps) {
       </Card>
 
       {/* Report Preview/Content */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader className="pb-2">
           <CardTitle className="flex items-center mb-4">
             <div>

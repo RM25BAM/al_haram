@@ -99,7 +99,7 @@ export function TreatmentAnalysis({ bin, treatmentMethodsData = [] }: TreatmentA
   }
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 bg-primary">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold flex items-center gap-2">
           <Recycle className="h-5 w-5" />
@@ -117,7 +117,7 @@ export function TreatmentAnalysis({ bin, treatmentMethodsData = [] }: TreatmentA
       {/* Quick Metrics Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <Card>
-          <CardContent className="p-4 text-center">
+          <CardContent className="p-4 text-center bg-primary">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Zap className="h-5 w-5 text-yellow-500" />
               <span className="font-medium">Expected Energy Output</span>
@@ -166,7 +166,7 @@ export function TreatmentAnalysis({ bin, treatmentMethodsData = [] }: TreatmentA
       {showTreatmentAnalysis && (
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2 bg-primary">
               <BarChart3 className="h-5 w-5" />
               Top 3 Treatment Methods for {bin.wasteType} Waste
             </CardTitle>
@@ -226,7 +226,7 @@ export function TreatmentAnalysis({ bin, treatmentMethodsData = [] }: TreatmentA
                           </div>
                         </div>
 
-                        <div className="p-3 bg-green-50 rounded-lg">
+                        <div className="p-3 bg-primary rounded-lg">
                           <div className="flex items-center justify-center gap-1 mb-1">
                             <DollarSign className="h-4 w-4 text-green-500" />
                             <span className="text-sm font-medium">Financial</span>

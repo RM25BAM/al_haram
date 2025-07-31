@@ -104,11 +104,11 @@ export function LocationsFeature() {
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* Interactive Map */}
-      <Card className="overflow-hidden bg-surface border-outline">
+      <Card className="overflow-hidden bg-surface border-surface-400">
         {/* Ultra-Compact Header with Integrated Filters */}
-        <div className="bg-surface border-b border-outline">
+        <div className="bg-surface border-b border-surface-400">
           {/* Top Row: Title + View Toggle + Actions */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-3 sm:px-4 py-2 gap-2 sm:gap-0 border-b border-outline/50">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-3 sm:px-4 py-2 gap-2 sm:gap-0 border-b border-surface-400/50">
             <div className="flex items-center gap-2">
               <Filter className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
               <h3 className="font-semibold text-primary text-base sm:text-lg lg:text-xl">
@@ -134,7 +134,7 @@ export function LocationsFeature() {
                 placeholder={tLocations("searchPlaceholder")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 h-10 text-sm border-outline bg-surface-200 text-primary placeholder:text-primary/50 focus:ring-2 focus:ring-secondary"
+                className="pl-10 h-10 text-sm border-surface-400 bg-surface-200 text-primary placeholder:text-primary/50 focus:ring-2 focus:ring-secondary"
               />
             </div>
 
@@ -147,10 +147,10 @@ export function LocationsFeature() {
                   setStatusFilter(value === "all" ? "" : value)
                 }
               >
-                <SelectTrigger className="h-10 w-full bg-surface-200 border-outline text-primary">
+                <SelectTrigger className="h-10 w-full bg-surface-200 border-surface-400 text-primary">
                   <SelectValue placeholder={tLocations("allStatus")} />
                 </SelectTrigger>
-                <SelectContent className="bg-surface border-outline">
+                <SelectContent className="bg-surface border-surface-400">
                   <SelectItem
                     value="all"
                     className="text-primary hover:bg-surface-200"
@@ -184,10 +184,10 @@ export function LocationsFeature() {
                   setTypeFilter(value === "all" ? "" : value)
                 }
               >
-                <SelectTrigger className="h-10 w-full bg-surface-200 border-outline text-primary">
+                <SelectTrigger className="h-10 w-full bg-surface-200 border-surface-400 text-primary">
                   <SelectValue placeholder={tLocations("allTypes")} />
                 </SelectTrigger>
-                <SelectContent className="bg-surface border-outline">
+                <SelectContent className="bg-surface border-surface-400">
                   <SelectItem
                     value="all"
                     className="text-primary hover:bg-surface-200"
@@ -215,10 +215,10 @@ export function LocationsFeature() {
                   setFillLevelFilter(value === "all" ? "" : value)
                 }
               >
-                <SelectTrigger className="h-10 w-full bg-surface-200 border-outline text-primary">
+                <SelectTrigger className="h-10 w-full bg-surface-200 border-surface-400 text-primary">
                   <SelectValue placeholder={tLocations("allFillLevels")} />
                 </SelectTrigger>
-                <SelectContent className="bg-surface border-outline">
+                <SelectContent className="bg-surface border-surface-400">
                   <SelectItem
                     value="all"
                     className="text-primary hover:bg-surface-200"
@@ -258,10 +258,10 @@ export function LocationsFeature() {
                   setLocationFilter(value === "all" ? "" : value)
                 }
               >
-                <SelectTrigger className="h-10 w-full bg-surface-200 border-outline text-primary">
+                <SelectTrigger className="h-10 w-full bg-surface-200 border-surface-400 text-primary">
                   <SelectValue placeholder={tLocations("allLocations")} />
                 </SelectTrigger>
-                <SelectContent className="bg-surface border-outline">
+                <SelectContent className="bg-surface border-surface-400">
                   <SelectItem
                     value="all"
                     className="text-primary hover:bg-surface-200"
@@ -320,7 +320,7 @@ export function LocationsFeature() {
 
           {/* Critical Bins Alert - Integrated within Map Card */}
           {criticalBinsForMap.length > 0 && (
-            <div className="mt-6 p-4 bg-surface-200 border border-outline rounded-lg">
+            <div className="mt-6 p-4 bg-surface-200 border border-surface-400 rounded-lg">
               <div className="flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5 text-primary" />
                 <h4 className="font-medium text-primary">

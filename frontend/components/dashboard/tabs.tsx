@@ -23,7 +23,7 @@ export function DashboardTabs() {
   return (
     <Tabs defaultValue="waste-dashboard" className="mt-4 sm:mt-6 lg:mt-8">
       <TabsList
-        className="grid w-full grid-cols-5 h-auto p-1 gap-1 rounded-lg shadow-sm bg-card"
+        className="grid w-full grid-cols-5 h-auto p-1 gap-1 rounded-lg shadow-sm bg-surface-500"
       >
         <TabsTrigger
           value="waste-dashboard"

@@ -70,7 +70,7 @@ export function AnnualReport() {
   if (error || !annualData) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <Card className="p-6 bg-surface border-outline">
+        <Card className="p-6  border-surface-400">
           <div className="text-center">
             <AlertTriangle className="h-12 w-12 text-primary mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2 text-primary">
@@ -88,7 +88,7 @@ export function AnnualReport() {
   return (
     <div className="space-y-6">
       {/* Cover Page */}
-      <Card className="bg-gradient-to-r from-surface to-surface-200 border-outline">
+      <Card className="bg-surface-300 border-surface-400">
         <CardHeader className="text-center">
           <div className="flex items-center justify-center mb-4">
             <Calendar className="h-12 w-12 text-primary" />
@@ -109,7 +109,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Annual Waste Summary */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <BarChart3 className="h-5 w-5" />
@@ -118,7 +118,7 @@ export function AnnualReport() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-3xl font-bold text-primary">
                 {annualData.annualWasteSummary.totalWaste.value.toLocaleString()}
               </p>
@@ -127,7 +127,7 @@ export function AnnualReport() {
                 {annualData.annualWasteSummary.totalWaste.unit})
               </p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-3xl font-bold text-primary">
                 {annualData.annualWasteSummary.monthlyAverage.value.toLocaleString()}
               </p>
@@ -136,7 +136,7 @@ export function AnnualReport() {
                 {annualData.annualWasteSummary.monthlyAverage.unit})
               </p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-3xl font-bold text-primary">
                 +{annualData.annualWasteSummary.yearOverYearGrowth.value}%
               </p>
@@ -144,7 +144,7 @@ export function AnnualReport() {
                 {t("yearOverYearGrowth")}
               </p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-3xl font-bold text-primary">
                 {annualData.annualWasteSummary.peakMonth.amount.toLocaleString()}
               </p>
@@ -156,7 +156,7 @@ export function AnnualReport() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="border-l-4 border-l-primary bg-surface-200 border-outline">
+            <Card className="border-l-4 border-l-primary bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <h4 className="font-medium mb-2 text-primary">
                   {t("plasticWaste")}
@@ -171,7 +171,7 @@ export function AnnualReport() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-l-4 border-l-secondary bg-surface-200 border-outline">
+            <Card className="border-l-4 border-l-secondary bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <h4 className="font-medium mb-2 text-primary">
                   {t("organicWaste")}
@@ -191,7 +191,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Monthly Breakdown */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface-300 border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <TrendingUp className="h-5 w-5" />
@@ -218,9 +218,9 @@ export function AnnualReport() {
               {annualData.monthlyBreakdown.slice(0, 6).map((month, index) => (
                 <div
                   key={month.month}
-                  className="flex items-center gap-4 p-3 bg-surface-200 rounded-lg border border-outline shadow-sm"
+                  className="flex items-center gap-4 p-3 bg-surface-200 rounded-lg border border-surface-400 shadow-sm"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-md border-2 border-outline">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-md border-2 border-surface-400e">
                     <span className="text-primary font-bold text-xs drop-shadow-sm">
                       {month.month}
                     </span>
@@ -278,9 +278,9 @@ export function AnnualReport() {
               {annualData.monthlyBreakdown.slice(6, 12).map((month) => (
                 <div
                   key={month.month}
-                  className="flex items-center gap-4 p-3 bg-surface-200 rounded-lg border border-outline shadow-sm"
+                  className="flex items-center gap-4 p-3 bg-surface-200 rounded-lg border border-surface-400 shadow-sm"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center shadow-md border-2 border-outline">
+                  <div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center shadow-md border-2 border-surface-400">
                     <span className="text-primary font-bold text-xs drop-shadow-sm">
                       {month.month}
                     </span>
@@ -337,7 +337,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Financial Outcomes */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <DollarSign className="h-5 w-5" />
@@ -346,21 +346,21 @@ export function AnnualReport() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 $
                 {annualData.financialOutcomes.totalRevenue.value.toLocaleString()}
               </p>
               <p className="text-sm text-primary/70">{t("totalRevenue")}</p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 $
                 {annualData.financialOutcomes.operationalCosts.value.toLocaleString()}
               </p>
               <p className="text-sm text-primary/70">{t("operationalCosts")}</p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 ${annualData.financialOutcomes.netProfit.value.toLocaleString()}
               </p>
@@ -369,7 +369,7 @@ export function AnnualReport() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="border-l-4 border-l-primary bg-surface-200 border-outline">
+            <Card className="border-l-4 border-l-primary bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <h4 className="font-medium mb-2 text-primary">
                   {t("plasticRecyclingRevenue")}
@@ -384,7 +384,7 @@ export function AnnualReport() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-l-4 border-l-secondary bg-surface-200 border-outline">
+            <Card className="border-l-4 border-l-secondary bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <h4 className="font-medium mb-2 text-primary">
                   {t("energyGenerationRevenue")}
@@ -404,7 +404,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Energy Generation */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <Zap className="h-5 w-5" />
@@ -413,7 +413,7 @@ export function AnnualReport() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Card className="border-l-4 border-l-primary bg-surface-200 border-outline">
+            <Card className="border-l-4 border-l-primary bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
@@ -430,7 +430,7 @@ export function AnnualReport() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-secondary bg-surface-200 border-outline">
+            <Card className="border-l-4 border-l-secondary bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
@@ -447,7 +447,7 @@ export function AnnualReport() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-primary bg-surface-200 border-outline">
+            <Card className="border-l-4 border-l-primary bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
@@ -467,7 +467,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Environmental Impact */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <Leaf className="h-5 w-5" />
@@ -476,7 +476,7 @@ export function AnnualReport() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Card className="bg-surface-200 border-outline">
+            <Card className="bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <div className="text-center">
                   <Leaf className="h-8 w-8 text-green-600 mx-auto mb-2" />
@@ -491,7 +491,7 @@ export function AnnualReport() {
               </CardContent>
             </Card>
 
-            <Card className="bg-surface-200 border-outline">
+            <Card className="bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <div className="text-center">
                   <Activity className="h-8 w-8 text-blue-600 mx-auto mb-2" />
@@ -506,7 +506,7 @@ export function AnnualReport() {
               </CardContent>
             </Card>
 
-            <Card className="bg-surface-200 border-outline">
+            <Card className="bg-surface-200 border-surface-400">
               <CardContent className="p-4">
                 <div className="text-center">
                   <Target className="h-8 w-8 text-red-600 mx-auto mb-2" />
@@ -525,7 +525,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Maintenance Report Summaries */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <Settings className="h-5 w-5" />
@@ -534,7 +534,7 @@ export function AnnualReport() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 {annualData.maintenanceReportSummaries.totalMaintenanceHours.toLocaleString()}
               </p>
@@ -542,7 +542,7 @@ export function AnnualReport() {
                 {t("totalMaintenanceHours")}
               </p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 {annualData.maintenanceReportSummaries.scheduledMaintenance}
               </p>
@@ -550,13 +550,13 @@ export function AnnualReport() {
                 {t("scheduledMaintenance")}
               </p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 {annualData.maintenanceReportSummaries.emergencyRepairs}
               </p>
               <p className="text-sm text-primary/70">{t("emergencyRepairs")}</p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 {annualData.maintenanceReportSummaries.systemUptime}%
               </p>
@@ -573,7 +573,7 @@ export function AnnualReport() {
                 (category, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-3 bg-surface-200 rounded-lg border border-outline"
+                    className="flex items-center justify-between p-3 bg-surface-200 rounded-lg border border-surface-400"
                   >
                     <div>
                       <p className="font-medium text-primary">
@@ -601,7 +601,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Quarterly Performance */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <BarChart3 className="h-5 w-5" />
@@ -616,7 +616,7 @@ export function AnnualReport() {
             {annualData.quarterlyPerformance.map((quarter, index) => (
               <Card
                 key={quarter.quarter}
-                className="relative overflow-hidden bg-surface-200 border-outline shadow-sm hover:shadow-md transition-all duration-300"
+                className="relative overflow-hidden bg-surface-200 border-surface-400 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <CardContent className="p-6">
                   {/* Quarter Header */}
@@ -641,7 +641,7 @@ export function AnnualReport() {
                   {/* Metrics */}
                   <div className="space-y-4">
                     {/* Waste Volume */}
-                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline">
+                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-surface-400">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-primary rounded-full"></div>
                         <span className="text-sm font-medium text-primary">
@@ -657,7 +657,7 @@ export function AnnualReport() {
                     </div>
 
                     {/* Revenue */}
-                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline">
+                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-surface-400">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-secondary rounded-full"></div>
                         <span className="text-sm font-medium text-primary">
@@ -673,7 +673,7 @@ export function AnnualReport() {
                     </div>
 
                     {/* System Uptime */}
-                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline">
+                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-surface-400">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-primary rounded-full"></div>
                         <span className="text-sm font-medium text-primary">
@@ -691,7 +691,7 @@ export function AnnualReport() {
                     </div>
 
                     {/* Efficiency */}
-                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline">
+                    <div className="flex items-center justify-between p-3 bg-surface rounded-lg border border-surface-400">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-secondary rounded-full"></div>
                         <span className="text-sm font-medium text-primary">
@@ -710,7 +710,7 @@ export function AnnualReport() {
                   </div>
 
                   {/* Performance Indicator */}
-                  <div className="mt-6 pt-4 border-t border-outline">
+                  <div className="mt-6 pt-4 border-t border-surface-400">
                     <div className="flex items-center justify-between text-xs text-primary/70 mb-3">
                       <span>{t("overallScore")}</span>
                       <span className="font-medium">
@@ -736,7 +736,7 @@ export function AnnualReport() {
       </Card>
 
       {/* Recommendations */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <Target className="h-5 w-5" />
@@ -748,7 +748,7 @@ export function AnnualReport() {
             {annualData.recommendations.map((recommendation, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-4 bg-gradient-to-r from-surface to-surface-200 rounded-lg border border-outline"
+                className="flex items-start gap-3 p-4 bg-gradient-to-r from-surface to-surface-200 rounded-lg border border-surface-400"
               >
                 <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-sm font-bold text-primary">

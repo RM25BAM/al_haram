@@ -263,14 +263,13 @@ const config: Config = {
 
         // Custom theme colors for reusability
         "dark-green": {
-          primary: "var(--dark-green-primary)", // #1D493E
-          secondary: "var(--dark-green-secondary)", // #244E47
+          primary: "var(--primary)",
+          secondary: "var(--secondary)",
         },
-        "light-cream": "var(--light-cream)", // #EBEBDF
-        "dark-cream": "var(--dark-cream)", // #DDD7CB
-        "medium-cream": "var(--medium-cream)", // #DDD7CB
-        "beige-border": "var(--beige-border)", // #C9C3B7
-
+        "light-cream": "var(--surface-100)",
+        "dark-cream": "var(--surface-300)",
+        "medium-cream": "var(--surface-300)",
+        "beige-border": "var(--border)",
         // Makkah-inspired color palette
         makkah: {
           olive: {

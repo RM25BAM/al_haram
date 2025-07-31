@@ -139,7 +139,7 @@ export function WeeklyReport() {
   if (error) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <Card className="w-full max-w-md bg-surface border-outline">
+        <Card className="w-full max-w-md bg-surface border-surface-400">
           <CardContent className="p-6 text-center space-y-4">
             <AlertTriangle className="h-8 w-8 text-red-500 mx-auto" />
             <div>
@@ -171,7 +171,7 @@ export function WeeklyReport() {
   return (
     <div className="space-y-6">
       {/* Report Controls */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface-300 border-surface-400">
         <CardHeader>
           <div className="flex flex-col gap-1 md:flex-row items-center justify-between">
             <CardTitle className="flex items-center gap-2 text-primary">
@@ -180,7 +180,7 @@ export function WeeklyReport() {
             </CardTitle>
             <div className="flex items-center gap-3">
               <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
-                <SelectTrigger className="w-[200px] bg-surface-200 border-outline">
+                <SelectTrigger className="w-[200px] bg-surface-200 border-surface-400">
                   <SelectValue
                     placeholder={`${tCommon("filter")} ${t("weeklyReport").toLowerCase()}...`}
                   />
@@ -201,7 +201,7 @@ export function WeeklyReport() {
                 variant="outline"
                 size="sm"
                 disabled={isRefreshing}
-                className="bg-surface-200 border-outline hover:bg-surface hover:text-primary"
+                className="bg-surface-200 border-surface-400 hover:bg-surface hover:text-primary"
               >
                 {isRefreshing ? (
                   <Loader2 className="h-4 w-4 animate-spin text-primary" />
@@ -233,7 +233,7 @@ export function WeeklyReport() {
       </Card>
 
       {/* Summary Section */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <Activity className="h-5 w-5" />
@@ -242,7 +242,7 @@ export function WeeklyReport() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 {weeklyData.summary.totalWasteKg?.toLocaleString() || 0} kg
               </p>
@@ -250,7 +250,7 @@ export function WeeklyReport() {
                 {t("totalWasteCollected")}
               </p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-secondary">
                 {weeklyData.summary.topWasteZone || "N/A"}
               </p>
@@ -258,7 +258,7 @@ export function WeeklyReport() {
                 {t("topWasteGeneratingZone")}
               </p>
             </div>
-            <div className="text-center p-4 bg-surface-200 rounded-lg border border-outline">
+            <div className="text-center p-4 bg-surface-200 rounded-lg border border-surface-400">
               <p className="text-2xl font-bold text-primary">
                 {weeklyData.summary.systemStatus ||
                   weeklyData.summary.systemPerformance ||
@@ -270,7 +270,7 @@ export function WeeklyReport() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Key Highlights */}
-            <Card className="border border-outline bg-surface-200">
+            <Card className="border border-surface-400 bg-surface-200">
               <CardContent className="p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <TrendingUp className="h-5 w-5 text-primary" />
@@ -375,7 +375,7 @@ export function WeeklyReport() {
             </Card>
 
             {/* Top 3 Waste Zones - Mini Leaderboard */}
-            <Card className="border border-outline bg-surface-200">
+            <Card className="border border-surface-400 bg-surface-200">
               <CardContent className="p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="h-5 w-5 text-primary" />
@@ -389,7 +389,7 @@ export function WeeklyReport() {
                     .map((zone, index) => (
                       <div
                         key={zone.name}
-                        className="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline"
+                        className="flex items-center justify-between p-3 bg-surface rounded-lg border border-surface-400"
                       >
                         <div className="flex items-center gap-3">
                           <div
@@ -427,7 +427,7 @@ export function WeeklyReport() {
       </Card>
 
       {/* Key Metrics at a Glance */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <BarChart3 className="h-5 w-5" />
@@ -459,7 +459,7 @@ export function WeeklyReport() {
                         : t("noDataAvailable")}
                     </p>
                   </div>
-                  <div className="p-3 bg-gray-100 rounded-full border border-outline">
+                  <div className="p-3 bg-gray-100 rounded-full border border-surface-400">
                     <BarChart3 className="h-6 w-6 text-gray-600" />
                   </div>
                 </div>
@@ -482,7 +482,7 @@ export function WeeklyReport() {
                       {t("ofTotalWaste")}
                     </p>
                   </div>
-                  <div className="p-3 bg-blue-100 rounded-full border border-outline">
+                  <div className="p-3 bg-blue-100 rounded-full border border-surface-400">
                     <TrendingUp className="h-6 w-6 text-blue-600" />
                   </div>
                 </div>
@@ -505,7 +505,7 @@ export function WeeklyReport() {
                       {t("ofTotalWaste")}
                     </p>
                   </div>
-                  <div className="p-3 bg-green-100 rounded-full border border-outline">
+                  <div className="p-3 bg-green-100 rounded-full border border-surface-400">
                     <Activity className="h-6 w-6 text-green-600" />
                   </div>
                 </div>
@@ -527,7 +527,7 @@ export function WeeklyReport() {
                       {weeklyData.keyMetrics.topZone.unit}
                     </p>
                   </div>
-                  <div className="p-3 bg-red-100 rounded-full border border-outline">
+                  <div className="p-3 bg-red-100 rounded-full border border-surface-400">
                     <MapPin className="h-6 w-6 text-red-600" />
                   </div>
                 </div>
@@ -538,7 +538,7 @@ export function WeeklyReport() {
       </Card>
 
       {/* System Status & Performance Analysis */}
-      <Card className="bg-surface border-outline">
+      <Card className="bg-surface border-surface-400">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-primary">
             <Activity className="h-5 w-5" />
@@ -548,7 +548,7 @@ export function WeeklyReport() {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* System Alerts */}
-            <div className="p-4 rounded-lg border border-outline bg-surface-200">
+            <div className="p-4 rounded-lg border border-surface-400 bg-surface-200">
               <div className="flex items-center gap-2 mb-4">
                 <AlertTriangle className="h-5 w-5 text-primary" />
                 <h4 className="font-medium text-primary">
@@ -606,7 +606,7 @@ export function WeeklyReport() {
             </div>
 
             {/* Week-to-Week Comparison */}
-            <div className="bg-surface-200 p-4 rounded-lg border border-outline">
+            <div className="bg-surface-200 p-4 rounded-lg border border-surface-400">
               <div className="flex items-center gap-2 mb-4">
                 <Calendar className="h-5 w-5 text-primary" />
                 <h4 className="font-medium text-primary">
@@ -616,7 +616,7 @@ export function WeeklyReport() {
               <div className="space-y-4">
                 {/* Compact weekly summary */}
                 <div className="flex items-center justify-center gap-8">
-                  <div className="text-center p-3 bg-surface rounded-lg border border-outline">
+                  <div className="text-center p-3 bg-surface rounded-lg border border-surface-400">
                     <p className="text-xl font-bold text-primary">
                       {weeklyData.weekToWeekComparison.thisWeek.toLocaleString()}{" "}
                       kg
@@ -625,7 +625,7 @@ export function WeeklyReport() {
                       {tCommon("thisWeek")}
                     </p>
                   </div>
-                  <div className="text-center p-3 bg-surface rounded-lg border border-outline">
+                  <div className="text-center p-3 bg-surface rounded-lg border border-surface-400">
                     <p className="text-xl font-bold text-secondary">
                       {weeklyData.weekToWeekComparison.lastWeek.toLocaleString()}{" "}
                       kg
@@ -679,11 +679,11 @@ export function WeeklyReport() {
                               return (
                                 <div
                                   key={day.day}
-                                  className="bg-surface rounded-lg p-2 border border-outline shadow-sm"
+                                  className="bg-surface rounded-lg p-2 border border-surface-400 shadow-sm"
                                 >
                                   <div className="flex items-center justify-between mb-1">
                                     <div className="flex items-center gap-2">
-                                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shadow-lg border-2 border-outline">
+                                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shadow-lg border-2 border-surface-400">
                                         <span className="text-primary font-bold text-sm">
                                           {day.day.slice(0, 3)}
                                         </span>
