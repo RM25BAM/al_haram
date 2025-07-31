@@ -19,20 +19,22 @@ export function DashboardHeader() {
   const formattedLastUpdated = useFormattedTime(lastUpdated);
 
   return (
-    <header className="shadow-sm mt-4 mx-3 sm:mx-4 lg:mx-6 rounded-lg bg-secondary">
+    /* mt-4 mx-3 sm:mx-4 lg:mx-6 */
+    <header className="shadow-sm top-0 ">
       <div className="w-full px-3 sm:px-4 lg:px-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-3 sm:py-4 gap-3 sm:gap-0">
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="bg-gradient-to-br from-makkah-olive-500 to-makkah-olive-600 p-1.5 sm:p-2 rounded-lg shadow-sm">
+              {/* Dont like the navbar icon -> better to make own logo */}
               <Recycle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             </div>
             <div>
               <h1 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white font-arabic">
                 {tDashboard("title")}
               </h1>
-              <p className="text-xs sm:text-sm text-gray-200">
+              {/* <p className="text-xs sm:text-sm text-gray-200">
                 {tDashboard("subtitle")}
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">

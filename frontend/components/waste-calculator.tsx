@@ -195,7 +195,7 @@ export function WasteCalculator() {
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="bg-surface-200 border-outline text-primary hover:bg-surface-200/80 cursor-pointer [&>span]:text-primary [&[data-placeholder]>span]:text-primary/50">
+                          <SelectTrigger className="bg-surface-200 border-outline text-primary hover:bg-surface/80 cursor-pointer [&>span]:text-primary [&[data-placeholder]>span]:text-primary/50">
                             <SelectValue placeholder={t("calculator.selectWasteType")} />
                           </SelectTrigger>
                         </FormControl>

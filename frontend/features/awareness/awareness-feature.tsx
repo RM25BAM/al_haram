@@ -70,7 +70,7 @@ const getStatusColor = (status: string) => {
     case "active":
       return "bg-secondary text-surface";
     case "completed":
-      return "bg-surface-200 text-primary border-outline";
+      return "bg-green-500 text-primary border-outline";
     case "draft":
       return "bg-surface border-outline text-primary";
     default:
@@ -265,7 +265,7 @@ export function AwarenessFeature() {
 
       {/* Campaign Performance Table */}
       <Card className="bg-surface border border-outline">
-        <CardHeader className="border-b border-outline bg-surface">
+        <CardHeader className="border-b border-outline">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
               <CardTitle className="flex items-center gap-2 text-primary">
@@ -278,7 +278,7 @@ export function AwarenessFeature() {
             </div>
           </div>
         </CardHeader>
-        <CardContent className="bg-surface p-0">
+        <CardContent className="p-0">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>

@@ -67,7 +67,7 @@ export default function SimulationPage() {
   ).length;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[linear-gradient(135deg,#1D4757,#0F2027)]">
       {/* Header */}
       <header className="bg-card shadow-serene border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +83,7 @@ export default function SimulationPage() {
                   Back to Dashboard
                 </Button>
               </Link>
-              <div className="bg-gradient-makkah p-2 rounded-lg shadow-peaceful">
+              <div className=" p-2 rounded-lg shadow-peaceful">
                 <Activity className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
@@ -153,13 +153,12 @@ export default function SimulationPage() {
                         </div>
                       </div>
                       <Badge
-                        className={`${
-                          bin.fillLevel >= 90
+                        className={`${bin.fillLevel >= 90
                             ? "status-error"
                             : bin.status === "needs_collection"
-                            ? "status-warning"
-                            : "status-success"
-                        }`}
+                              ? "status-warning"
+                              : "status-success"
+                          }`}
                       >
                         {bin.fillLevel}%
                       </Badge>

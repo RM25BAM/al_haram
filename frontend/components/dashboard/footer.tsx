@@ -5,12 +5,11 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useFooterTranslations } from "@/hooks/use-translations";
 import { Mail, Phone, BookOpen, HelpCircle, ExternalLink } from "lucide-react";
-
 export function DashboardFooter() {
   const t = useFooterTranslations();
 
   return (
-    <footer className="border-t bg-muted/30">
+    <footer className="border-t border-[#b99751]">
       <div className="mx-auto p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Resources & Guidance */}
@@ -91,5 +90,6 @@ export function DashboardFooter() {
         </div>
       </div>
     </footer>
+
   );
 }

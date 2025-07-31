@@ -88,37 +88,46 @@ export function DashboardStats() {
   const stats = [
     {
       title: tDashboard("totalBins"),
+      borderColor: "border-gray-300",
+      backGround: "bg-gray-100",
       value: totalBins,
       icon: Trash2,
-      color: "text-gray-600",
-      bgColor: "bg-gray-100",
+      color: "text-white",
+      bgColor: "bg-gray-500",
       onClick: () => setActiveDialog("total"),
     },
     {
       title: tDashboard("criticalBins"),
+      borderColor: "border-red-300",
+      backGround: "bg-red-300",
       value: `${criticalBins.length}/${totalBins}`,
       icon: AlertTriangle,
-      color: "text-red-600",
-      bgColor: "bg-red-50",
+      color: "text-white",
+      bgColor: "bg-red-500",
       onClick: () => setActiveDialog("critical"),
     },
     {
       title: tDashboard("needsCollection"),
+      borderColor: "border-amber-500",
+      backGround: "bg-amber-300",
       value: `${needsCollectionBins.length}/${totalBins}`,
       icon: CheckCircle,
-      color: "text-amber-600",
-      bgColor: "bg-amber-50",
+      color: "text-white",
+      bgColor: "bg-amber-500",
       onClick: () => setActiveDialog("needsCollection"),
     },
     {
       title: tDashboard("activeTrucks"),
+      borderColor: "border-blue-500",
+      backGround: "bg-blue-300",
       value: activeTrucks.length,
       icon: Truck,
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
+      color: "text-white",
+      bgColor: "bg-blue-800",
       onClick: () => setActiveDialog("activeTrucks"),
     },
     {
+      backGround: getCarbonFilterColors(carbonFilter),
       title: tDashboard("carbonFilterCountdown"),
       value: getCarbonFilterDisplayValue(carbonFilter),
       icon: Filter,
@@ -135,7 +144,7 @@ export function DashboardStats() {
         {stats.map((stat, index) => (
           <Card
             key={index}
-            className="hover:shadow-lg transition-all duration-200 cursor-pointer bg-surface-200 border border-outline hover:scale-[1.02]"
+            className={`hover:shadow-lg transition-all duration-200 ${stat.backGround} ${stat.borderColor} cursor-pointer border hover:scale-[1.02]`}
             onClick={stat.onClick}
           >
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-3 sm:px-4 lg:px-6 pt-3 sm:pt-4 lg:pt-6">
@@ -149,7 +158,7 @@ export function DashboardStats() {
               </div>
             </CardHeader>
             <CardContent className="px-3 sm:px-4 lg:px-6 pb-3 sm:pb-4 lg:pb-6">
-              <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">
+              <div className="text-lg sm:text-xl lg:text-2xl font-bold text-[#122B36]">
                 {stat.value}
               </div>
             </CardContent>

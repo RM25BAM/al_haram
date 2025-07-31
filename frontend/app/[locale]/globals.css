@@ -30,20 +30,16 @@ body {
   }
 
   /* Custom gradient utilities using your professional palette */
-  .bg-gradient-makkah {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--secondary)) 100%
-    );
-  }
+  /*   .bg-gradient-makkah {
+    background: linear-gradient(135deg,
+        hsl(var(--primary)) 0%,
+        hsl(var(--secondary)) 100%);
+  } */
 
   .bg-gradient-serene {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--surface)) 0%,
-      hsl(var(--surface-200)) 100%
-    );
+    background: linear-gradient(135deg,
+        hsl(var(--surface)) 0%,
+        hsl(var(--surface-200)) 100%);
   }
 
   .bg-gradient-professional {
@@ -67,133 +63,240 @@ body {
 @layer base {
   :root {
     /* Professional Color Palette - Using your 4 main colors */
-    --background: 165 40% 24%; /* #1D493E - Your primary dark green */
-    --foreground: 41 21% 84%; /* Surface color for text on dark background */
-    --card: 41 21% 84%; /* #DDD7CB - Your primary surface (dark cream) for cards */
-    --card-foreground: 165 40% 24%; /* Dark green text on cream cards */
-    --popover: 41 21% 84%; /* #DDD7CB - Surface color for popovers */
-    --popover-foreground: 165 40% 24%; /* Dark green text */
+    --background: 197 50% 23%;
+    /* HSL of #1D4757 */
+    --foreground: 41 21% 84%;
+    /* Surface color for text on dark background */
+    --card: 41 21% 84%;
+    /* #DDD7CB - Your primary surface (dark cream) for cards */
+    --card-foreground: 165 40% 24%;
+    /* Dark green text on cream cards */
+    --popover: 41 21% 84%;
+    /* #DDD7CB - Surface color for popovers */
+    --popover-foreground: 165 40% 24%;
+    /* Dark green text */
 
     /* Custom color variables for our theme */
-    --dark-green-primary: #1d493e; /* Your exact primary dark green */
-    --dark-green-secondary: #244e47; /* Your exact secondary green */
-    --light-cream: #ebebdf; /* Your exact light cream (surface-200) */
-    --dark-cream: #ddd7cb; /* Your exact dark cream (surface) */
-    --medium-cream: #ddd7cb; /* Same as dark cream for consistency */
-    --beige-border: #c9c3b7; /* Beige border color */
-    --primary: 165 40% 24%; /* #1D493E - Your primary color */
-    --primary-foreground: 41 21% 84%; /* Surface color for contrast */
-    --secondary: 165 35% 28%; /* #244E47 - Your secondary color */
-    --secondary-foreground: 41 21% 84%; /* Surface color for contrast */
-    --muted: 165 35% 28%; /* Using secondary color for muted */
-    --muted-foreground: 43 32% 90%; /* Light cream for muted text */
-    --accent: 165 35% 28%; /* #244E47 - Secondary green for accents */
-    --accent-foreground: 43 32% 90%; /* Light cream for accent text */
-    --destructive: 0 65% 55%; /* Keep existing destructive color */
-    --destructive-foreground: 43 32% 90%; /* Light cream for contrast */
-    --border: 40 15% 77%; /* #c9c3b7 - Your outline color for borders */
-    --input: 43 32% 90%; /* #EBEBDF - Light cream for inputs */
-    --ring: 165 40% 24%; /* Primary color for focus rings */
-    --chart-1: 165 40% 24%; /* Primary dark green */
-    --chart-2: 165 35% 28%; /* Secondary green */
-    --chart-3: 41 21% 84%; /* Dark cream surface */
-    --chart-4: 43 32% 90%; /* Light cream surface */
-    --chart-5: 40 15% 77%; /* Outline color */
-    --radius: 0.75rem; /* Slightly more rounded for softness */
-    --sidebar-background: 43 32% 90%; /* #EBEBDF - Light cream sidebar */
-    --sidebar-foreground: 165 40% 24%; /* Dark green text */
-    --sidebar-primary: 165 40% 24%; /* Primary dark green */
-    --sidebar-primary-foreground: 43 32% 90%; /* Light cream */
-    --sidebar-accent: 41 21% 84%; /* Dark cream accent */
-    --sidebar-accent-foreground: 165 40% 24%; /* Dark green text */
-    --sidebar-border: 40 15% 77%; /* Outline color for borders */
-    --sidebar-ring: 165 40% 24%; /* Primary color */
+    --dark-green-primary: #1d493e;
+    /* Your exact primary dark green */
+    --dark-green-secondary: #244e47;
+    /* Your exact secondary green */
+    --light-cream: #ebebdf;
+    /* Your exact light cream (surface-200) */
+    --dark-cream: #ddd7cb;
+    /* Your exact dark cream (surface) */
+    --medium-cream: #ddd7cb;
+    /* Same as dark cream for consistency */
+    --beige-border: #c9c3b7;
+    /* Beige border color */
+    --primary: 192 50% 5%;
+    /* #1D493E - Your primary color */
+    --primary-foreground: 41 21% 84%;
+    /* Surface color for contrast */
+    --secondary: 40 45% 52%;
+    /* #244E47 - Your secondary color */
+    --secondary-foreground: 41 21% 84%;
+    /* Surface color for contrast */
+    --muted: 165 35% 28%;
+    /* Using secondary color for muted */
+    --muted-foreground: 43 32% 90%;
+    /* Light cream for muted text */
+    --accent: 165 35% 28%;
+    /* #244E47 - Secondary green for accents */
+    --accent-foreground: 43 32% 90%;
+    /* Light cream for accent text */
+    --destructive: 0 65% 55%;
+    /* Keep existing destructive color */
+    --destructive-foreground: 43 32% 90%;
+    /* Light cream for contrast */
+    --border: 40 15% 77%;
+    /* #c9c3b7 - Your outline color for borders */
+    --input: 43 32% 90%;
+    /* #EBEBDF - Light cream for inputs */
+    --ring: 165 40% 24%;
+    /* Primary color for focus rings */
+    --chart-1: 165 40% 24%;
+    /* Primary dark green */
+    --chart-2: 165 35% 28%;
+    /* Secondary green */
+    --chart-3: 41 21% 84%;
+    /* Dark cream surface */
+    --chart-4: 43 32% 90%;
+    /* Light cream surface */
+    --chart-5: 40 15% 77%;
+    /* Outline color */
+    --radius: 0.75rem;
+    /* Slightly more rounded for softness */
+    --sidebar-background: 43 32% 90%;
+    /* #EBEBDF - Light cream sidebar */
+    --sidebar-foreground: 165 40% 24%;
+    /* Dark green text */
+    --sidebar-primary: 165 40% 24%;
+    /* Primary dark green */
+    --sidebar-primary-foreground: 43 32% 90%;
+    /* Light cream */
+    --sidebar-accent: 41 21% 84%;
+    /* Dark cream accent */
+    --sidebar-accent-foreground: 165 40% 24%;
+    /* Dark green text */
+    --sidebar-border: 40 15% 77%;
+    /* Outline color for borders */
+    --sidebar-ring: 165 40% 24%;
+    /* Primary color */
 
     /* Success states using your color palette */
-    --success: 165 35% 28%; /* Secondary green for success */
-    --success-foreground: 43 32% 90%; /* Light cream text */
+    --success: 165 35% 28%;
+    /* Secondary green for success */
+    --success-foreground: 43 32% 90%;
+    /* Light cream text */
 
     /* Warning states with warm tones from your palette */
-    --warning: 40 15% 60%; /* Darker variant of outline color */
-    --warning-foreground: 43 32% 90%; /* Light cream text */
+    --warning: 40 15% 60%;
+    /* Darker variant of outline color */
+    --warning-foreground: 43 32% 90%;
+    /* Light cream text */
 
     /* Info states using surface colors */
-    --info: 41 21% 84%; /* Dark cream for info */
-    --info-foreground: 165 40% 24%; /* Dark green text */
+    --info: 41 21% 84%;
+    /* Dark cream for info */
+    --info-foreground: 165 40% 24%;
+    /* Dark green text */
 
     /* Professional Color Palette - Your 4 main colors with full scales */
-    --surface: 41 21% 84%; /* #DDD7CB - Your primary surface (dark cream) */
-    --surface-50: 43 32% 90%; /* #EBEBDF - Your light cream */
-    --surface-100: 42 28% 88%; /* Lighter variant */
-    --surface-200: 43 32% 90%; /* #EBEBDF - Your exact light cream color */
-    --surface-300: 42 25% 85%; /* Medium variant */
-    --surface-400: 41 23% 83%; /* Medium-dark variant */
-    --surface-500: 41 21% 84%; /* #DDD7CB - Your exact primary surface */
-    --surface-600: 41 19% 79%; /* Darker variant */
-    --surface-700: 41 17% 74%; /* Much darker */
-    --surface-800: 41 15% 69%; /* Very dark */
-    --surface-900: 41 13% 64%; /* Darkest */
+    --surface: 41 21% 88%;
+    /* #DDD7CB - Your primary surface (dark cream) */
+    --surface-50: 43 32% 90%;
+    /* #EBEBDF - Your light cream */
+    --surface-100: 42 28% 88%;
+    /* Lighter variant */
+    --surface-200: 43 32% 90%;
+    /* #EBEBDF - Your exact light cream color */
+    --surface-300: 42 25% 85%;
+    /* Medium variant */
+    --surface-400: 41 23% 83%;
+    /* Medium-dark variant */
+    --surface-500: 41 21% 84%;
+    /* #DDD7CB - Your exact primary surface */
+    --surface-600: 41 19% 79%;
+    /* Darker variant */
+    --surface-700: 41 17% 74%;
+    /* Much darker */
+    --surface-800: 41 15% 69%;
+    /* Very dark */
+    --surface-900: 41 13% 64%;
+    /* Darkest */
 
     /* Professional Color Palette - Outline/Border Colors */
-    --outline: 40 15% 77%; /* #c9c3b7 - Your beige border color */
-    --outline-50: 40 20% 96%; /* Very light */
-    --outline-100: 40 18% 93%; /* Light */
-    --outline-200: 40 16% 86%; /* Medium-light */
-    --outline-300: 40 14% 79%; /* Medium */
-    --outline-400: 40 12% 72%; /* Medium-dark */
-    --outline-500: 40 15% 77%; /* #c9c3b7 - Your exact outline color */
-    --outline-600: 40 13% 70%; /* Darker */
-    --outline-700: 40 11% 63%; /* Much darker */
-    --outline-800: 40 9% 56%; /* Very dark */
-    --outline-900: 40 7% 49%; /* Darkest */
+    --outline: 40 15% 77%;
+    /* #c9c3b7 - Your beige border color */
+    --outline-50: 40 20% 96%;
+    /* Very light */
+    --outline-100: 40 18% 93%;
+    /* Light */
+    --outline-200: 40 16% 86%;
+    /* Medium-light */
+    --outline-300: 40 14% 79%;
+    /* Medium */
+    --outline-400: 40 12% 72%;
+    /* Medium-dark */
+    --outline-500: 40 15% 77%;
+    /* #c9c3b7 - Your exact outline color */
+    --outline-600: 40 13% 70%;
+    /* Darker */
+    --outline-700: 40 11% 63%;
+    /* Much darker */
+    --outline-800: 40 9% 56%;
+    /* Very dark */
+    --outline-900: 40 7% 49%;
+    /* Darkest */
   }
 
   .dark {
     /* Dark mode using your professional color palette */
-    --background: 165 40% 12%; /* Much darker version of your primary */
-    --foreground: 43 32% 90%; /* Your light cream for text */
-    --card: 165 35% 16%; /* Darker version of secondary for cards */
-    --card-foreground: 43 32% 90%; /* Light cream text */
-    --popover: 165 35% 16%; /* Same as cards */
-    --popover-foreground: 43 32% 90%; /* Light cream text */
-    --primary: 165 40% 35%; /* Lighter version of your primary for dark mode */
-    --primary-foreground: 165 40% 12%; /* Dark background for contrast */
-    --secondary: 165 35% 20%; /* Darker version of secondary */
-    --secondary-foreground: 43 32% 90%; /* Light cream text */
-    --muted: 165 35% 18%; /* Muted dark version */
-    --muted-foreground: 41 21% 84%; /* Your surface color for muted text */
-    --accent: 165 35% 22%; /* Slightly lighter accent */
-    --accent-foreground: 43 32% 90%; /* Light cream text */
-    --destructive: 0 55% 45%; /* Darker red for dark mode */
-    --destructive-foreground: 43 32% 90%; /* Light cream text */
-    --border: 40 15% 30%; /* Darker version of outline for borders */
-    --input: 165 35% 18%; /* Dark input background */
-    --ring: 165 40% 35%; /* Lighter primary for focus rings */
-    --chart-1: 165 40% 35%; /* Lighter primary for charts */
-    --chart-2: 165 35% 28%; /* Your secondary color */
-    --chart-3: 41 21% 60%; /* Darker surface for charts */
-    --chart-4: 43 32% 70%; /* Darker light cream */
-    --chart-5: 40 15% 50%; /* Darker outline */
-    --sidebar-background: 165 35% 16%; /* Dark sidebar */
-    --sidebar-foreground: 43 32% 90%; /* Light cream text */
-    --sidebar-primary: 165 40% 35%; /* Lighter primary */
-    --sidebar-primary-foreground: 165 40% 12%; /* Dark text */
-    --sidebar-accent: 165 35% 18%; /* Dark accent */
-    --sidebar-accent-foreground: 43 32% 90%; /* Light cream text */
-    --sidebar-border: 40 15% 30%; /* Dark border */
-    --sidebar-ring: 165 40% 35%; /* Lighter primary */
+    --background: 165 40% 12%;
+    /* Much darker version of your primary */
+    --foreground: 43 32% 90%;
+    /* Your light cream for text */
+    --card: 165 35% 16%;
+    /* Darker version of secondary for cards */
+    --card-foreground: 43 32% 90%;
+    /* Light cream text */
+    --popover: 165 35% 16%;
+    /* Same as cards */
+    --popover-foreground: 43 32% 90%;
+    /* Light cream text */
+    --primary: 192 50% 5%;
+    /* Lighter version of your primary for dark mode */
+    --primary-foreground: 165 40% 12%;
+    /* Dark background for contrast */
+    --secondary: 165 35% 20%;
+    /* Darker version of secondary */
+    --secondary-foreground: 43 32% 90%;
+    /* Light cream text */
+    --muted: 165 35% 18%;
+    /* Muted dark version */
+    --muted-foreground: 41 21% 84%;
+    /* Your surface color for muted text */
+    --accent: 165 35% 22%;
+    /* Slightly lighter accent */
+    --accent-foreground: 43 32% 90%;
+    /* Light cream text */
+    --destructive: 0 55% 45%;
+    /* Darker red for dark mode */
+    --destructive-foreground: 43 32% 90%;
+    /* Light cream text */
+    --border: 40 15% 30%;
+    /* Darker version of outline for borders */
+    --input: 165 35% 18%;
+    /* Dark input background */
+    --ring: 165 40% 35%;
+    /* Lighter primary for focus rings */
+    --chart-1: 165 40% 35%;
+    /* Lighter primary for charts */
+    --chart-2: 165 35% 28%;
+    /* Your secondary color */
+    --chart-3: 41 21% 60%;
+    /* Darker surface for charts */
+    --chart-4: 43 32% 70%;
+    /* Darker light cream */
+    --chart-5: 40 15% 50%;
+    /* Darker outline */
+    --sidebar-background: 165 35% 16%;
+    /* Dark sidebar */
+    --sidebar-foreground: 43 32% 90%;
+    /* Light cream text */
+    --sidebar-primary: 165 40% 35%;
+    /* Lighter primary */
+    --sidebar-primary-foreground: 165 40% 12%;
+    /* Dark text */
+    --sidebar-accent: 165 35% 18%;
+    /* Dark accent */
+    --sidebar-accent-foreground: 43 32% 90%;
+    /* Light cream text */
+    --sidebar-border: 40 15% 30%;
+    /* Dark border */
+    --sidebar-ring: 165 40% 35%;
+    /* Lighter primary */
 
     /* Dark mode success, warning, info using your palette */
-    --success: 165 35% 35%; /* Lighter secondary for success */
-    --success-foreground: 165 35% 12%; /* Dark text */
-    --warning: 40 15% 50%; /* Darker outline color for warning */
-    --warning-foreground: 43 32% 90%; /* Light cream text */
-    --info: 41 21% 60%; /* Darker surface for info */
-    --info-foreground: 43 32% 90%; /* Light cream text */
+    --success: 165 35% 35%;
+    /* Lighter secondary for success */
+    --success-foreground: 165 35% 12%;
+    /* Dark text */
+    --warning: 40 15% 50%;
+    /* Darker outline color for warning */
+    --warning-foreground: 43 32% 90%;
+    /* Light cream text */
+    --info: 41 21% 60%;
+    /* Darker surface for info */
+    --info-foreground: 43 32% 90%;
+    /* Light cream text */
 
     /* Professional Color Palette - Surface Colors (Dark Mode) */
-    --surface: 165 35% 18%; /* Dark surface using your color palette */
-    --surface-50: 165 35% 25%; /* Lighter surface variant */
+    --surface: 165 35% 18%;
+    /* Dark surface using your color palette */
+    --surface-50: 165 35% 25%;
+    /* Lighter surface variant */
     --surface-100: 165 35% 22%;
     --surface-200: 165 35% 25%;
     --surface-300: 165 35% 20%;
@@ -205,7 +308,8 @@ body {
     --surface-900: 165 35% 10%;
 
     /* Professional Color Palette - Outline Colors (Dark Mode) */
-    --outline: 40 15% 35%; /* Darker outline for dark mode */
+    --outline: 40 15% 35%;
+    /* Darker outline for dark mode */
     --outline-50: 40 15% 50%;
     --outline-100: 40 15% 45%;
     --outline-200: 40 15% 40%;
@@ -227,11 +331,9 @@ body {
   body {
     @apply bg-background text-foreground;
     /* Subtle texture for warmth */
-    background-image: radial-gradient(
-      circle at 1px 1px,
-      rgba(0, 0, 0, 0.01) 1px,
-      transparent 0
-    );
+    background-image: radial-gradient(circle at 1px 1px,
+        rgba(0, 0, 0, 0.01) 1px,
+        transparent 0);
     background-size: 20px 20px;
   }
 
@@ -289,6 +391,7 @@ body {
 
 /* Enhanced component styles */
 @layer components {
+
   /* Card enhancements */
   .card {
     @apply shadow-serene backdrop-blur-sm;
@@ -428,12 +531,10 @@ body {
 
 /* Loading states with olive theme */
 .loading-olive {
-  background: linear-gradient(
-    90deg,
-    hsl(var(--muted)) 0%,
-    hsl(var(--accent)) 50%,
-    hsl(var(--muted)) 100%
-  );
+  background: linear-gradient(90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--accent)) 50%,
+      hsl(var(--muted)) 100%);
   background-size: 200% 100%;
   animation: loading-shimmer 1.5s infinite;
 }
@@ -442,6 +543,7 @@ body {
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }
@@ -453,10 +555,12 @@ body {
 }
 
 @keyframes pulse-olive {
+
   0%,
   100% {
     box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
   }
+
   50% {
     box-shadow: 0 0 0 6px hsl(var(--primary) / 0);
   }
@@ -472,6 +576,7 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

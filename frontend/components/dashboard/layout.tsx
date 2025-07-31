@@ -1,6 +1,4 @@
 "use client";
-
-import { PatternSvg } from "@/public/pattern";
 import { ReactNode } from "react";
 
 interface DashboardLayoutProps {
@@ -10,7 +8,7 @@ interface DashboardLayoutProps {
 
 export function DashboardLayout({ children, className = "" }: DashboardLayoutProps) {
   return (
-    <div className={`min-h-screen bg-background ${className}`}>
+    <div className={`min-h-screen relative overflow-hidden ${className}`}>
       {children}
     </div>
   );
@@ -23,10 +21,16 @@ interface DashboardMainProps {
 
 export function DashboardMain({ children, className = "" }: DashboardMainProps) {
   return (
-    <main className={`w-full px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 ${className}`}>
-      <div className="fixed inset-0 opacity-[0.02] pointer-events-none z-0">
-        {/* <PatternSvg fillColor="#000000" /> */}
+    <main className={`relative z-10 w-full px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 ${className}`}>
+      {/* Subtle background pattern */}
+      <div className="fixed inset-0 -z-10 pointer-events-none opacity-5">
+        <img
+          src="/1.svg"
+          alt="Pattern"
+          className="w-full h-full"
+        />
       </div>
+
       {children}
     </main>
   );
